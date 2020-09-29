@@ -33,6 +33,15 @@
 <%# end %>
 
 <%= form_for @user do |f| %>
+  <p>
+    <%= pluralize(@user.errors.count, "error") %> prevented the form from being saved:
+  </p>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
   <div>
     <%= f.label :username %>
   </div>
