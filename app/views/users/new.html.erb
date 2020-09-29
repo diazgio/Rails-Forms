@@ -10,6 +10,28 @@
   <%#<input type="submit" value="Create User">
 </form> %>
 
+<%#form_tag('/users', method: :post) do%>
+  <div>
+  <%# label_tag(:username, "Username")%>
+  </div>
+  <div>
+  <%# text_field_tag(:username) %>
+  </div>
+  <div>
+  <%# label_tag(:email, "Email")%>
+  </div>
+  <div>
+  <%# text_field_tag(:email) %>
+  </div>
+  </div>
+  <div>
+  <%# label_tag(:password, "Password")%>
+  </div>
+  <div>
+  <%# password_field_tag(:password) %>
+  </div>
+<%# end %>
+
 <%= form_for @user do |f| %>
   <div>
     <%= f.label :username %>
