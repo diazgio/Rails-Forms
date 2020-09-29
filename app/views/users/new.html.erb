@@ -1,0 +1,64 @@
+<h1>New User</h1>
+<!--<form accept-charset="UTF-8" data-remote="true" action="/users" method="post">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="user[username]">
+    <label for="email">email</label>
+    <input type="text" id="email" name="user[email]">
+    <label for="password">Pass</label>
+    <input type="password" id="password" name="user[password]">
+    <input type="hidden" name="authenticity_token" value="<%# form_authenticity_token %> >
+    <input type="submit" value="Create User">
+  </form>-->
+
+<%#form_tag('/users', method: :post) do%>
+  <div>
+  <%# label_tag(:username, "Username")%>
+  </div>
+  <div>
+  <%# text_field_tag(:username) %>
+  </div>
+  <div>
+  <%# label_tag(:email, "Email")%>
+  </div>
+  <div>
+  <%# text_field_tag(:email) %>
+  </div>
+  </div>
+  <div>
+  <%# label_tag(:password, "Password")%>
+  </div>
+  <div>
+  <%# password_field_tag(:password) %>
+  </div>
+<%# end %>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= pluralize(@user.errors.count, "error") %> prevented the form from being saved:
+  </p>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <div>
+    <%= f.label :username %>
+  </div>
+  <div>
+    <%= f.text_field :username %>
+  </div>
+  <div>
+    <%= f.label :password %>
+  </div>
+  <div>
+    <%= f.password_field :password %> 
+  </div>
+  <div>
+    <%= f.label :email %>
+  </div>
+  <div>
+    <%= f.text_field :email %>
+  </div>
+  <%= f.submit %>
+<% end %>
