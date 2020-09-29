@@ -1,0 +1,11 @@
+<% content_for :form_errors do %>
+  <p>
+    <%= pluralize(object.errors.count, "error") %> prevented the form from being saved:
+  </p>
+
+  <ul>
+    <% object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
